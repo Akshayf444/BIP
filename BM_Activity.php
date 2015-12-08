@@ -17,7 +17,8 @@ if (isset($_POST['submit'])) {
         'zvt' => $_POST['zvt'],
         'rotahaler' => $_POST['rotahaler'],
         'BM_Emp_id' => $BM_Emp_id,
-        'created' => date('Y-m-d H:i:s')
+        'created' => date('Y-m-d H:i:s'),
+        'smswayid' => $_SESSION['bdm'],
     );
     $addActivity->create($field_array);
     redirect_to('BM_Activity.php');
