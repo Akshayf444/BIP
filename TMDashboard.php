@@ -1,9 +1,9 @@
 <?php
 session_start();
-//if (!isset($_SESSION['tmemp'])) {
-//    header("Location: index.php");
-//    exit();
-//}
+if (!isset($_SESSION['tmemp'])) {
+    header("Location: index.php");
+    exit();
+}
 require_once("./includes/initialize.php");
 require_once './header.php';
 //$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');

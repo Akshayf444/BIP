@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['tmemp'])) {
+    header("Location: index.php");
+    exit();
+}
 require_once("./includes/initialize.php");
 require_once './header.php';
 if(isset($_GET['doctor_name']))
@@ -8,8 +12,18 @@ if(isset($_GET['doctor_name']))
        $doctor_name=$_GET['doctor_name'][$i];
        $brand=$_GET['brand'][$i];
        $support=$_GET['support'][$i];
-       $add_doctor=new Tm_
+       $field_array=array(
+           'doctor_name'=>$doctor_name,
+           'smsWayID'=>$_SESSION['smsWayID'],
+           'TM_Emp_Id'=>$_SESSION['tmemp'],
+           'brand'=>$brand,
+           'support'=>$support,
+           'created'=>date('Y-m-d H:i:s'),
+       );
+       $add_doctor=new doctor('tm_doctor');
+       $add_doctor->create($field_array);
     }
+    header("location:TM_Add_Doctor.php");
 }
 ?>
 <div class="row">
