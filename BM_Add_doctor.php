@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['tmemp'])) {
+if (!isset($_SESSION['bdmemp'])) {
     header("Location: index.php");
     exit();
 }
@@ -14,25 +14,26 @@ if(isset($_GET['doctor_name']))
        $support=$_GET['support'][$i];
        $field_array=array(
            'doctor_name'=>$doctor_name,
-           'smsWayID'=>$_SESSION['smsWayID'],
-           'TM_Emp_Id'=>$_SESSION['tmemp'],
+           'smsWayID'=>$_SESSION['bdm'],
+           'BM_Emp_Id'=>$_SESSION['bdmemp'],
            'brand'=>$brand,
            'support'=>$support,
            'created'=>date('Y-m-d H:i:s'),
        );
-       $add_doctor=new doctor('tm_doctor');
+       $add_doctor=new doctor('bm_doctor');
        $add_doctor->create($field_array);
     }
-    header("location:TM_Add_Doctor.php");
+    header("location:BM_Add_doctor.php");
 }
 ?>
 <div class="col-lg-12">
-    <a href="TM_Add.php" class="badge">GO Back</a>
+    <a href="BM_Add.php" class="badge">GO Back</a>
 </div>
+
 <div class="row">
     <div class="col-lg-12 ">
         <h4>ADD BIP SELECTION OF DR(COMPETITORS)</h4>
-        <form action="TM_Add_Doctor.php" method="GET">
+        <form action="BM_Add_Doctor.php" method="GET">
         <table class="table table-bordered table-stripped">
             <tr>
                 <th>Sr.NO</th>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['tmemp'])) {
+if (!isset($_SESSION['bdmemp'])) {
     header("Location: index.php");
     exit();
 }
@@ -144,7 +144,7 @@ require_once './header.php';
 
     <div class="row">
         <div class="col-lg-12" style="padding-top:20px">
-            <a href="TM_Add.php" class="btn btn-success pull-left" >Add</a>
+            <a href="BM_Add.php" class="btn btn-success pull-left" >Add</a>
             <a href="View.php" class="btn btn-info pull-right" >View</a>
         </div>
         <!-- /.col-lg-12 -->
