@@ -14,5 +14,5 @@ require_once('classman_power.php');
 require_once ('query.php');
 require_once ('Launch.php');
 require_once ('SMS.php');
+require_once ('doctor.php');
 require_once ('Activity.php');
-

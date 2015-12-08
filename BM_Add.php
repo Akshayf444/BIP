@@ -9,7 +9,7 @@ require_once './header.php';
         <div class="panel panel-body">
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="TM_Add_Doctor.php" class="btn btn-success btn-block">ADD BIP SELECTION OF DR(COMPETITORS)</a>
+                    <a href="BM_Add_Doctor.php" class="btn btn-success btn-block ">ADD BIP SELECTION OF DR(COMPETITORS)</a>
                 </div>
             </div>
             <div align="center" class="row">
