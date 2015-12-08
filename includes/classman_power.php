@@ -2,20 +2,46 @@
 
 class man_power extends Table {
 
-    protected $table_name = "breathfree_manpower";
+    protected $table_name = "bip_manpower";
 
     public static function authenticate($id = "", $password = "") {
         global $database;
         $id = $database->escape_value($id);
         $password = $database->escape_value($password);
         if ($id != '' && $password != '') {
-            $sql = "SELECT * FROM breathfree_manpower ";
+            $sql = "SELECT * FROM bip_manpower ";
             $sql .= "WHERE BM_Emp_Id = '{$id}' ";
             $sql .= " AND  BM_Password = '{$password}' ";
             $sql .= " AND  status='Active'  ";
 
             $sql .= " LIMIT 1";
             //echo $sql;
+            $result_array = Query::executeQuery($sql);
+            return !empty($result_array) ? array_shift($result_array) : false;
+        }
+    }
+    public static function sm_authenticate($id = "", $password = "") {
+        global $database;
+        $id = $database->escape_value($id);
+        $password = $database->escape_value($password);
+        if ($id != '' && $password != '') {
+            $sql = "SELECT * FROM bip_manpower ";
+            $sql .= "WHERE SM_Emp_Id = '{$id}' ";
+            $sql .= " AND  SM_Password = '{$password}' ";
+            $sql .= " LIMIT 1";
+            $result_array = Query::executeQuery($sql);
+            return !empty($result_array) ? array_shift($result_array) : false;
+        }
+    }
+    public static function tm_authenticate($id = "", $password = "") {
+        global $database;
+        $id = $database->escape_value($id);
+        $password = $database->escape_value($password);
+        if ($id != '' && $password != '') {
+            $sql = "SELECT * FROM bip_manpower ";
+            $sql .= "WHERE TM_Emp_Id = '{$id}' ";
+            $sql .= " AND  TM_Password = '{$password}' ";
+            $sql .= " LIMIT 1";
             $result_array = Query::executeQuery($sql);
             return !empty($result_array) ? array_shift($result_array) : false;
         }
