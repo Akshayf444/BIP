@@ -4,12 +4,10 @@ if (!isset($_SESSION['bdmemp'])) {
     header("Location: index.php");
     exit();
 }
+
 require_once("./includes/initialize.php");
+$BM_Emp_id = $_SESSION['bdmemp'];
 require_once './header.php';
-//$conditions = array('GROUP BY rm.BM_EMP_ID ORDER BY Rotahaler DESC LIMIT 1');
-//$topper = man_power::bmViewStatus($conditions);
-//
-//$bm_empid = $_SESSION['tmemp'];
 ?>
 <style>
     .gvstyling th
@@ -152,12 +150,12 @@ require_once './header.php';
     <!-- /.row -->
     <br />
     <?php
-//    $conditions = array('WHERE rm.BM_EMP_ID = ' . $bm_empid);
-//    $dashboard = man_power::bmViewStatus($conditions);
-//    if (!empty($dashboard)) {
-//        $dashboard = array_shift($dashboard);
-//    }
-//    ?>
+    $conditions = array('WHERE BM_EMP_ID = ' . $BM_Emp_id);
+    $dashboard = Activity::BMActivity($conditions);
+    if (!empty($dashboard)) {
+        $dashboard = array_shift($dashboard);
+    }
+    ?>
     <div class="row">
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#f0ad4e;border-radius:4px;border:1px solid transparent">
@@ -168,10 +166,10 @@ require_once './header.php';
                         </div>-->
                         <div class="col-xs-12 text-right">
                             <div class="medium">
-                                <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->regular_clinic) ? $dashboard->regular_clinic : 0; ?>
+                                <label  id="lblPoint" style="color:white"><?php echo isset($dashboard->device_check) ? $dashboard->device_check : 0; ?>
                                 </label>
                             </div>
-                            <div><span style="color:white">Regular Clinics in which rotahaler is being changed</span></div>
+                            <div><span style="color:white">BIP Device Check Camp</span></div>
                         </div>
                     </div>
                 </div>
@@ -187,11 +185,11 @@ require_once './header.php';
                         </div>-->
                         <div class="col-xs-10 text-right">
                             <div class="medium">
-                                <label id="lblRx"  style="color:white"><?php echo isset($dashboard->regular_activation) ? $dashboard->regular_activation : 0; ?>
+                                <label id="lblRx"  style="color:white"><?php echo isset($dashboard->paramedic) ? $dashboard->paramedic : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">Enter Concept Initiated In Regular Activations</span></div>
+                                <span style="color:white">BIP Paramedic Meet</span></div>
                         </div>
                     </div>
                 </div>
@@ -210,11 +208,11 @@ require_once './header.php';
                         </div>-->
                         <div class="col-xs-12 text-right">
                             <div class="medium">
-                                <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->Rotahaler) ? $dashboard->Rotahaler : 0; ?>
+                                <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->chemist_meet) ? $dashboard->chemist_meet : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">No.of Rotahaler Changed</span></div>
+                                <span style="color:white">BIP Chemist Meet</span></div>
                         </div>
                     </div>
                 </div>
@@ -229,11 +227,11 @@ require_once './header.php';
                         </div>-->
                         <div class="col-xs-12 text-right">
                             <div class="medium">
-                                <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->Rotahaler) ? $dashboard->Rotahaler : 0; ?>
+                                <label id="lblunapprove"  style="color:white"><?php echo isset($dashboard->visibility) ? $dashboard->visibility : 0; ?>
                                 </label>
                             </div>
                             <div>
-                                <span style="color:white">No.of Rotahaler Changed</span></div>
+                                <span style="color:white">Visibility At Clinics(Poster/Tearoff)</span></div>
                         </div>
                     </div>
                 </div>
@@ -252,6 +250,8 @@ require_once './header.php';
                         <img u="image" src="Images/darkback.jpg" />
                         <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of Rotahaler Changed</div>
                         <?php
+                         $condition = array('GROUP BY BM_Emp_Id');
+                        $toppers = Activity::BMActivity($condition);
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
