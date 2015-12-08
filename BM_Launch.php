@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 require_once './header.php';
 ?>
 <div class="col-lg-12">
-    <a href="TMDashboard.php" class="badge">GO Back</a>
+    <a href="BM_Add.php" class="badge">GO Back</a>
 </div>
 
 <div class="col-lg-12">

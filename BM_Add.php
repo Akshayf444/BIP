@@ -14,17 +14,17 @@ require_once './header.php';
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">ADD BIP DIFFERENTIAL LAUNCH</a>
+                    <a href="BM_Launch.php" class="btn btn-success btn-block">ADD BIP DIFFERENTIAL LAUNCH</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">ADD ACTIVITY DETAILS</a>
+                    <a href="BM_Activity.php" class="btn btn-success btn-block">ADD ACTIVITY DETAILS</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">GO BACK</a>
+                    <a href="BMDashboard.php" class="btn btn-success btn-block">GO BACK</a>
                 </div>
             </div>
         </div>

@@ -17,17 +17,17 @@ if (isset($_SESSION['bdmemp'])) {
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
+                    <a href="View_Launch.php" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">VIEW ACTIVITY DETAILS</a>
+                    <a href="View_Activity.php" class="btn btn-success btn-block">VIEW ACTIVITY DETAILS</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">GO BACK</a>
+                    <a href="BMDashboard.php" class="btn btn-success btn-block">GO BACK</a>
                 </div>
             </div>
         </div>
@@ -46,17 +46,17 @@ if (isset($_SESSION['bdmemp'])) {
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
+                    <a href="View_Launch.php" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">VIEW ACTIVITY DETAILS</a>
+                    <a href="View_Activity.php" class="btn btn-success btn-block">VIEW ACTIVITY DETAILS</a>
                 </div>
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="#" class="btn btn-success btn-block">GO BACK</a>
+                    <a href="TMDashboard.php" class="btn btn-success btn-block">GO BACK</a>
                 </div>
             </div>
         </div>

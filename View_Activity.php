@@ -3,10 +3,12 @@ session_start();
 require_once("./includes/initialize.php");
 if (isset($_SESSION['bdmemp'])) {
     $BM_Emp_id = $_SESSION['bdmemp'];
-    $Activities = Activity::BMActivity($BM_Emp_id);
+    $condition = array('WHERE BM_Emp_Id = ' . $BM_Emp_id);
+    $Activities = Activity::BMActivity($condition);
 } elseif (isset($_SESSION['tmemp'])) {
     $TM_Emp_id = $_SESSION['tmemp'];
-    $Activities = Activity::TMActivity($TM_Emp_id);
+    $condition = array('WHERE TM_Emp_Id = ' . $TM_Emp_id);
+    $Activities = Activity::TMActivity($condition);
 }
 require_once './header.php';
 ?>
