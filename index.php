@@ -26,10 +26,10 @@ if (isset($_POST['submit'])) { // Form has been submitted.
         $_SESSION['smemp'] = $found_sm->SM_Emp_Id;
         redirect_to("SMDashboard.php");
     }  elseif ($found_tm) {
-        $_SESSION['smsWayID'] = $found_sm->smsWayID;
-        $_SESSION['tmname'] = $found_sm->TM_Name;
-        $_SESSION['tmzone'] = $found_sm->Zone;
-        $_SESSION['tmemp'] = $found_sm->TM_Emp_Id;
+        $_SESSION['smsWayID'] = $found_tm->smsWayID;
+        $_SESSION['tmname'] = $found_tm->TM_Name;
+        $_SESSION['tmzone'] = $found_tm->Zone;
+        $_SESSION['tmemp'] = $found_tm->TM_Emp_Id;
         redirect_to("TMDashboard.php");
     } else {
         $message = "Incorrect Username/Password.";

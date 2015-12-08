@@ -8,7 +8,7 @@ if(isset($_GET['doctor_name']))
        $doctor_name=$_GET['doctor_name'][$i];
        $brand=$_GET['brand'][$i];
        $support=$_GET['support'][$i];
-//       $add_doctor=new 
+       $add_doctor=new Tm_
     }
 }
 ?>
