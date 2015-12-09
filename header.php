@@ -37,11 +37,11 @@
                 <label id="lblName"  style="color:white">Welcome <?php
                     if (isset($_SESSION['bdmname'])) {
                         echo $_SESSION['bdmname'];
-                    }elseif ($_SESSION['tmname']) {
-                        echo $_SESSION['tmname'];
                     } elseif ($_SESSION['smname']) {
                         echo $_SESSION['smname'];
-                    } 
+                    } elseif ($_SESSION['tmname']) {
+                        echo $_SESSION['tmname'];
+                    }
                     ?></label>
 
                 <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
