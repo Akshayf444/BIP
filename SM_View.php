@@ -8,7 +8,13 @@ if (!isset($_SESSION['smemp'])) {
 require_once("./includes/initialize.php");
 require_once './header.php';
 ?>
-
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-bordered table-stripped">
+            <tr></tr>
+        </table>
+    </div>
+</div>
 
 
 <?php
