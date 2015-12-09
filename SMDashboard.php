@@ -6,7 +6,7 @@ if (!isset($_SESSION['smemp'])) {
 }
 
 require_once("./includes/initialize.php");
-//$SM_Emp_id = $_SESSION['smemp'];
+$SM_Emp_id = $_SESSION['smemp'];
 require_once './header.php';
 ?>
 <style>
@@ -149,8 +149,8 @@ require_once './header.php';
     <!-- /.row -->
     <br />
     <?php
-    //$conditions = array('WHERE BM_EMP_ID = ' . $SM_Emp_id);
-    //$dashboard = Activity::BMActivity($conditions);
+    $conditions = array('WHERE SM_EMP_ID = ' . $SM_Emp_id);
+//    $dashboard = Activity::SMActivity($conditions);
 //    if (!empty($dashboard)) {
 //        $dashboard = array_shift($dashboard);
 //    }
