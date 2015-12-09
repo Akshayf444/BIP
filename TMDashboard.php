@@ -150,7 +150,7 @@ require_once './header.php';
     <!-- /.row -->
     <br />
     <?php
-    $condition = array('WHERE TM_Emp_Id = ' . $TM_Emp_id);
+    $condition = array('WHERE ta.TM_Emp_Id = ' . $TM_Emp_id);
     $dashboard = Activity::TMActivity($condition);
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
@@ -241,8 +241,8 @@ require_once './header.php';
                         <img u="image" src="Images/darkback.jpg" />
                         <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp</div>
                         <?php
-                        $condition = array('GROUP BY TM_Emp_Id ORDER BY device_check DESC LIMIT 1');
-                        $toppers = Activity::TMActivity($condition);
+                        $condition = array('GROUP BY ta.TM_Emp_Id ORDER BY device_check DESC LIMIT 1');
+                        $topper = Activity::TMActivity($condition);
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -255,8 +255,8 @@ require_once './header.php';
                     </div>
                     <div>
                         <?php
-                        $condition = array('GROUP BY TM_Emp_Id ORDER BY paramedic DESC LIMIT 1');
-                        $toppers = Activity::TMActivity($condition);
+                        $condition = array('GROUP BY ta.TM_Emp_Id ORDER BY paramedic DESC LIMIT 1');
+                        $topper = Activity::TMActivity($condition);
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -271,8 +271,8 @@ require_once './header.php';
                     </div>
                     <div>
                         <?php
-                        $condition = array('GROUP BY TM_Emp_Id ORDER BY chemist_meet DESC LIMIT 1');
-                        $toppers = Activity::TMActivity($condition);
+                        $condition = array('GROUP BY ta.TM_Emp_Id ORDER BY chemist_meet DESC LIMIT 1');
+                        $topper = Activity::TMActivity($condition);
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -287,8 +287,8 @@ require_once './header.php';
                     </div>
                     <div>
                         <?php
-                        $condition = array('GROUP BY TM_Emp_Id ORDER BY visibility DESC LIMIT 1');
-                        $toppers = Activity::TMActivity($condition);
+                        $condition = array('GROUP BY ta.TM_Emp_Id ORDER BY visibility DESC LIMIT 1');
+                        $topper = Activity::TMActivity($condition);
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
