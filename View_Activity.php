@@ -3,11 +3,11 @@ session_start();
 require_once("./includes/initialize.php");
 if (isset($_SESSION['bdmemp'])) {
     $BM_Emp_id = $_SESSION['bdmemp'];
-    $condition = array('WHERE BM_Emp_Id = ' . $BM_Emp_id);
+    $condition = array('WHERE ba.BM_Emp_Id = ' . $BM_Emp_id);
     $Activities = Activity::BMActivity($condition);
 } elseif (isset($_SESSION['tmemp'])) {
     $TM_Emp_id = $_SESSION['tmemp'];
-    $condition = array('WHERE TM_Emp_Id = ' . $TM_Emp_id);
+    $condition = array('WHERE ta.TM_Emp_Id = ' . $TM_Emp_id);
     $Activities = Activity::TMActivity($condition);
 }
 require_once './header.php';
