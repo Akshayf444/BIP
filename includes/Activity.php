@@ -31,6 +31,39 @@ class Activity extends Table {
         //echo  $sql;
         return Query::executeQuery($sql);
     }
+    public static function TMActivity_Report($condition1) {
+        $sql = "SELECT SUM(launch) AS launch,
+                SUM(device_check) AS device_check,
+                SUM(paramedic) AS paramedic,
+                SUM(chemist_meet) AS chemist_meet,
+                SUM(visibility) AS visibility,
+                SUM(revolizer) AS revolizer,
+                SUM(zvt) AS zvt,
+                SUM(rotahaler) AS rotahaler,act_id,bim.Zone,bim.Region,bim.Territory,bim.TM_Name,bim.BM_Name FROM TM_Activity tm
+                INNER JOIN bip_manpower bim
+                ON tm.`smswayid`=bim.`smsWayID`
+                WHERE bim.`SM_Emp_Id`=$condition1
+                GROUP BY bim.TM_Emp_Id";
+        //echo $sql;
+        $result_array = Query::executeQuery($sql);
+            return !empty($result_array) ? array_shift($result_array) : false;
+    }
+    public static function BMActivity_Report($condition1) {
+        $sql = "SELECT SUM(launch) AS launch,
+                SUM(device_check) AS device_check,
+                SUM(paramedic) AS paramedic,
+                SUM(chemist_meet) AS chemist_meet,
+                SUM(visibility) AS visibility,
+                SUM(revolizer) AS revolizer,
+                SUM(zvt) AS zvt,
+                SUM(rotahaler) AS rotahaler,act_id,bim.Zone,bim.Region,bim.Territory,bim.TM_Name,bim.BM_Name FROM BM_Activity tm
+                INNER JOIN bip_manpower bim
+                ON tm.`smswayid`=bim.`smsWayID`
+                WHERE bim.`SM_Emp_Id`=$condition1
+                GROUP BY bim.BM_Emp_Id";
+        $result_array = Query::executeQuery($sql);
+            return !empty($result_array) ? array_shift($result_array) : false;
+    }
 
     public static function TMActivity($conditions = array()) {
         $sql = "SELECT SUM(launch) AS launch,SUM(device_check) AS device_check,SUM(paramedic) AS paramedic,SUM(chemist_meet) AS chemist_meet,SUM(visibility) AS visibility,SUM(revolizer) AS revolizer,SUM(zvt) AS zvt,SUM(rotahaler) AS rotahaler,act_id,bmp.Zone,bmp.Region,bmp.Territory,bmp.TM_Name,bmp.BM_Name FROM TM_Activity ta INNER JOIN bip_manpower bmp ON bmp.smswayid = ta.smswayid  ";
