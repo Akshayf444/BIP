@@ -195,7 +195,7 @@ require_once './header.php';
 
     <div class="row" style="padding-top:20px">
         <div class="col-lg-6 col-md-6">
-            <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
+            <div style="background-color:#36B37F;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
                     <div class="row">
 
@@ -211,6 +211,7 @@ require_once './header.php';
                 </div>
             </div>
         </div>
+        <br/>
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">

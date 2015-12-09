@@ -37,9 +37,9 @@
                 <label id="lblName"  style="color:white">Welcome <?php
                     if (isset($_SESSION['bdmname'])) {
                         echo $_SESSION['bdmname'];
-                    } elseif ($_SESSION['smname']) {
+                    } elseif (isset($_SESSION['smname'])) {
                         echo $_SESSION['smname'];
-                    } elseif ($_SESSION['tmname']) {
+                    } elseif (isset($_SESSION['tmname'])) {
                         echo $_SESSION['tmname'];
                     }
                     ?></label>
