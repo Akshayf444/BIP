@@ -25,7 +25,6 @@ if (isset($_GET['report'])) {
             <form action="SM_View.php" method="GET">
                 <select class="form-control" name="report">
                     <option value="TM Report" <?php
-                    echo $report;
                     if (isset($report) && $report== 'TM Report') {
                         echo"selected";
                     }
