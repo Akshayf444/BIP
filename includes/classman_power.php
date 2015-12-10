@@ -20,6 +20,7 @@ class man_power extends Table {
             return !empty($result_array) ? array_shift($result_array) : false;
         }
     }
+
     public static function sm_authenticate($id = "", $password = "") {
         global $database;
         $id = $database->escape_value($id);
@@ -33,6 +34,7 @@ class man_power extends Table {
             return !empty($result_array) ? array_shift($result_array) : false;
         }
     }
+
     public static function tm_authenticate($id = "", $password = "") {
         global $database;
         $id = $database->escape_value($id);
@@ -79,7 +81,7 @@ class man_power extends Table {
         $id = $database->escape_value($id);
         $password = $database->escape_value($password);
         if ($id != '' && $password != '') {
-            $sql = "SELECT * FROM breathfree_admin ";
+            $sql = "SELECT * FROM bip_admin ";
             $sql .= "WHERE username = '{$id}' ";
             $sql .= " AND  password = '{$password}' ";
             $sql .= " LIMIT 1";
@@ -114,5 +116,7 @@ class man_power extends Table {
         $sql = "SELECT * FROM `breathfree_manpower` WHERE smswayid " . $condition;
         return Query::executeQuery($sql);
     }
+
+    
 
 }
