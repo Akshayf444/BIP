@@ -30,7 +30,7 @@
 <body>
 
     <div id="wrapper">
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-image:url(http://instacom.in/respi2/Images/strip.png); background-repeat:no-repeat; background-size: 100% 122px;">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #7e9e49; background-repeat:no-repeat; background-size: 100% 122px;">
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
                 <a id="anchr_Home" ><img id="Image1" src="../Images/screen.png" style="position: relative;height:9%;width: 13%;"></a> 
 

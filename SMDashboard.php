@@ -235,10 +235,10 @@ require_once './header.php';
             <!-- To move inline styles to css file/block, please specify a class name for each element. -->
             <div id="slider1_container" style="position: relative; margin: 0px 5px 5px 0px; float: left; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
                 <!-- Slides Container -->
-                <div u="slides" style="cursor: move; text-align:center; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
+                <div u="slides" style="cursor: move; text-align:center;background-color: #7e9e49; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
                     <div>
-                        <img u="image" src="Images/darkback.jpg" />
-                        <div id="dv_top"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp</div>
+<!--                        <img u="image" src="Images/darkback.jpg" />-->
+                        <div id="dv_top"  style="position: absolute; top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp</div>
                         <?php
                         $condition = array('GROUP BY t_union.SM_Emp_Id ORDER BY device_check DESC LIMIT 1');
                         $topper = Activity::SMActivity($condition);
@@ -246,11 +246,11 @@ require_once './header.php';
                             $topper = array_shift($topper);
                         }
                         ?>
-                        <div id="dv_tm1name"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 70px; width: 100%; height: 20px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
+                        <div id="dv_tm1name"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 70px; width: 100%; height: 20px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->device_check) ? $topper->device_check : '-'; ?></div>
+                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->device_check) ? $topper->device_check : '-'; ?></div>
                         <br />
-                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                     <div>
                         <?php
@@ -260,13 +260,13 @@ require_once './header.php';
                             $topper = array_shift($topper);
                         }
                         ?>
-                        <img u="image" src="Images/darkback.jpg" />
-                        <div id="Div1"  style="position: absolute; top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Paramedic Meet</div>
-                        <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
+<!--                        <img u="image" src="Images/darkback.jpg" />-->
+                        <div id="Div1"  style="position: absolute; top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Paramedic Meet</div>
+                        <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->paramedic) ? $topper->paramedic : '-'; ?></div>
+                        <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->paramedic) ? $topper->paramedic : '-'; ?></div>
                         <br />
-                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                     <div>
                         <?php
@@ -276,13 +276,13 @@ require_once './header.php';
                             $topper = array_shift($topper);
                         }
                         ?>
-                        <img u="image" src="Images/darkback.jpg" />
-                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Chemist Meet</div>
-                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
+<!--                        <img u="image" src="Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%;background-color: #7e9e49; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Chemist Meet</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->chemist_meet) ? $topper->chemist_meet : '-'; ?></div>
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->chemist_meet) ? $topper->chemist_meet : '-'; ?></div>
                         <br />
-                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                     <div>
                         <?php
@@ -292,13 +292,13 @@ require_once './header.php';
                             $topper = array_shift($topper);
                         }
                         ?>
-                        <img u="image" src="Images/darkback.jpg" />
-                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Visibility At Clinics</div>
-                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
+<!--                        <img u="image" src="Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Visibility At Clinics</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->SM_Name) ? $topper->SM_Name : 'NA'; ?></div>
                         <br />
-                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->visibility) ? $topper->visibility : '-'; ?></div>
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->visibility) ? $topper->visibility : '-'; ?></div>
                         <br />
-                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
                 </div>
                 <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
