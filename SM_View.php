@@ -23,6 +23,7 @@ if (isset($_GET['report'])) {
     <div class="col-lg-12">
         <div class="col-sm-12">
             <form action="SM_View.php" method="GET">
+                <div class="col-xs-6">
                 <select class="form-control" name="report">
                     <option value="TM Report" <?php
                     if (isset($report) && $report == 'TM Report') {
@@ -34,8 +35,10 @@ if (isset($_GET['report'])) {
                         echo"selected";
                     }
                     ?>>BM Report</option>
-                </select>
+                </select></div>
+                <div class="col-xs-6">
                 <input type="submit" class="btn btn-success btn-block" value="Search"/>
+                </div>
             </form>
         </div>
     </div>
