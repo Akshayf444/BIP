@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['smemp'])) {
+if (!isset($_SESSION['adminname'])) {
     header("Location: index.php");
     exit();
 }
@@ -18,7 +18,7 @@ $condition=array("GROUP BY bmp.TM_Emp_Id");
 }
 ?>
 <div class="col-lg-12">
-    <a href="SMDashboard.php" class="badge">GO Back</a>
+    <a href="adminDashBoard.php" class="badge">GO Back</a>
 </div>
 <div class="row">
     <div class="col-lg-12">

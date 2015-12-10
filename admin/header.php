@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
-        <meta name="author" content="" /><title>Respi2</title>
+        <meta name="author" content="" /><title>BIP</title>
 
         <script src="http://instacom.in/Cutisera/js/jquery-1.9.1.min.js"></script>
         <link href="http://instacom.in/respi2/jquery-ui.css" rel="stylesheet" type="text/css"/>

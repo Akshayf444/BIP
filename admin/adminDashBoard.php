@@ -1,12 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['smemp'])) {
+if (!isset($_SESSION['adminname'])) {
     header("Location: index.php");
     exit();
 }
 
 require_once("../includes/initialize.php");
-$SM_Emp_id = $_SESSION['smemp'];
 require_once 'header.php';
 ?>
 <style>
