@@ -26,30 +26,30 @@ if (isset($_POST['submit'])) {
 require_once './header.php';
 ?>
 <div class="col-lg-12">
-    <a href="TM_Add.php" class="badge">GO Back</a>
+    <a href="View.php" class="badge">GO Back</a>
 </div>
 <div class="col-lg-12">
     <h4>ADD BIP ACTIVITY</h4>
     <form action="#" method="post">
         <div class="form-group">
             <label>BIP Launch</label>
-            <input type="number" class="form-control" name="launch" >
+            <input type="number" min="0" class="form-control" name="launch" >
         </div>
         <div class="form-group">
             <label>BIP Device Check Camp</label>
-            <input type="number" class="form-control" name="device_check" >
+            <input type="number" min="0" class="form-control" name="device_check" >
         </div>
         <div class="form-group">
             <label> BIP Paramedic Meet</label>
-            <input type="number" class="form-control" name="paramedic" >
+            <input type="number" min="0" class="form-control" name="paramedic" >
         </div>
         <div class="form-group">
             <label> BIP Chemist Meet</label>
-            <input type="number" class="form-control" name="chemist_meet" >
+            <input type="number" min="0" class="form-control" name="chemist_meet" >
         </div>
         <div class="form-group">
             <label>Visibility At Clinics</label>
-            <input type="number" class="form-control" name="visibility" >
+            <input type="number" min="0" class="form-control" name="visibility" >
         </div>
 
         <div class="form-group">
