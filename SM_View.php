@@ -57,21 +57,21 @@ if (isset($_GET['report'])) {
                     <th>BIP Chemist Meet</th>
                     <th>Visibility At Clinics(Poster/Tearoff)</th>
                 </tr>
-
-                <tr>
-                    <td><?php
-                        if (isset($report) && $report == 'BM Report') {
-                            echo $check->BM_Name;
-                        } else {
-                            echo $check->TM_Name;
-                        }
-                        ?></td>
-                    <td><?php echo $check->device_check; ?></td>
-                    <td><?php echo $check->paramedic; ?></td>
-                    <td><?php echo $check->chemist_meet; ?></td>
-                    <td><?php echo $check->visibility; ?></td>
-                </tr>
-
+                <?php foreach ($check as $check2) { ?>
+                    <tr>
+                        <td><?php
+                            if (isset($report) && $report == 'BM Report') {
+                                echo $check2->BM_Name;
+                            } else {
+                                echo $check2->TM_Name;
+                            }
+                            ?></td>
+                        <td><?php echo $check2->device_check; ?></td>
+                        <td><?php echo $check2->paramedic; ?></td>
+                        <td><?php echo $check2->chemist_meet; ?></td>
+                        <td><?php echo $check2->visibility; ?></td>
+                    </tr>
+                <?php } ?>
             </table>
         <?php } ?>
     </div>
