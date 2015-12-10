@@ -45,8 +45,7 @@ class Activity extends Table {
                 WHERE bim.`SM_Emp_Id`=$condition1
                 GROUP BY bim.TM_Emp_Id";
         //echo $sql;
-        $result_array = Query::executeQuery($sql);
-            return !empty($result_array) ? array_shift($result_array) : false;
+        return Query::executeQuery($sql);
     }
     public static function BMActivity_Report($condition1) {
         $sql = "SELECT SUM(launch) AS launch,
@@ -61,8 +60,7 @@ class Activity extends Table {
                 ON tm.`smswayid`=bim.`smsWayID`
                 WHERE bim.`SM_Emp_Id`=$condition1
                 GROUP BY bim.BM_Emp_Id";
-        $result_array = Query::executeQuery($sql);
-            return !empty($result_array) ? array_shift($result_array) : false;
+        return Query::executeQuery($sql);
     }
 
     public static function TMActivity($conditions = array()) {
