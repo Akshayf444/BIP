@@ -8,7 +8,7 @@ if (isset($_SESSION['bdmemp'])) {
     $view = doctor::BM_Doctor($id);
     ?>
     <div class = "col-lg-12">
-        <a href = "BM_Add.php" class = "badge">GO Back</a>
+        <a href = "View.php" class = "badge">GO Back</a>
     </div>
 
     <div class = "row">
@@ -21,14 +21,17 @@ if (isset($_SESSION['bdmemp'])) {
                         <th>Competiton For Brand / Device Prescribe</th>
                         <th>Competiton For Support(Rs)</th>
                     </tr>
-                    <?php foreach ($view as $v) {
-                        ?>
-                        <tr>
-                            <td><?php echo $v->doctor_name; ?></td>
-                            <td><?php echo $v->brand; ?></td>
-                            <td><?php echo $v->support; ?></td>
-                        </tr>
-                    <?php } ?>
+                    <?php
+                    if (!empty($view)) {
+                        foreach ($view as $v) {
+                            ?>
+                            <tr>
+                                <td><?php echo $v->doctor_name; ?></td>
+                                <td><?php echo $v->brand; ?></td>
+                                <td><?php echo $v->support; ?></td>
+                            </tr>
+                        <?php }
+                    } ?>
                 </table>
             </form>
         </div>
@@ -39,7 +42,7 @@ if (isset($_SESSION['bdmemp'])) {
     $view = doctor::TM_Doctor($id);
     ?>
     <div class = "col-lg-12">
-        <a href = "TM_Add.php" class = "badge">GO Back</a>
+        <a href = "View.php" class = "badge">GO Back</a>
     </div>
 
     <div class = "row">
@@ -52,14 +55,18 @@ if (isset($_SESSION['bdmemp'])) {
                         <th>Competiton For Brand / Device Prescribe</th>
                         <th>Competiton For Support(Rs)</th>
                     </tr>
-                    <?php foreach ($view as $v) {
-                        ?>
-                        <tr>
-                            <td><?php echo $v->doctor_name; ?></td>
-                            <td><?php echo $v->brand; ?></td>
-                            <td><?php echo $v->support; ?></td>
-                        </tr>
-                    <?php } ?>
+                    <?php
+                    if (!empty($view)) {
+                        foreach ($view as $v) {
+                            ?>
+                            <tr>
+                                <td><?php echo $v->doctor_name; ?></td>
+                                <td><?php echo $v->brand; ?></td>
+                                <td><?php echo $v->support; ?></td>
+                            </tr>
+                        <?php }
+                    }
+                    ?>
                 </table>
             </form>
         </div>
