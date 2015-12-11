@@ -9,11 +9,14 @@ require_once 'header.php';
 if (isset($_GET['report'])) {
     $report = $_GET['report'];
     if ($report == 'TM Report') {
-$condition=array("GROUP BY bmp.TM_Emp_Id");
+        $condition = array("GROUP BY bmp.TM_Emp_Id");
         $check = Activity::TMActivity($condition);
-    } else {
-        $condition=array("GROUP BY bmp.BM_Emp_Id");
+    } elseif ($report == 'TM Report') {
+        $condition = array("GROUP BY bmp.BM_Emp_Id");
         $check = Activity::BMActivity($condition);
+    } else {
+        $condition = array("GROUP BY bmp.SM_Emp_Id");
+        $check = Activity::SMActivity($condition);
     }
 }
 ?>
@@ -25,20 +28,25 @@ $condition=array("GROUP BY bmp.TM_Emp_Id");
         <div class="col-sm-12">
             <form action="Activity_list.php" method="GET">
                 <div class="col-xs-6">
-                <select class="form-control" name="report">
-                    <option value="TM Report" <?php
-                    if (isset($report) && $report == 'TM Report') {
-                        echo"selected";
-                    }
-                    ?>>TM Report</option>
-                    <option value="BM Report" <?php
-                    if (isset($report) && $report == 'BM Report') {
-                        echo"selected";
-                    }
-                    ?>>BM Report</option>
-                </select></div>
+                    <select class="form-control" name="report">
+                        <option value="TM Report" <?php
+                        if (isset($report) && $report == 'TM Report') {
+                            echo"selected";
+                        }
+                        ?>>TM Report</option>
+                        <option value="BM Report" <?php
+                        if (isset($report) && $report == 'BM Report') {
+                            echo"selected";
+                        }
+                        ?>>BM Report</option>
+                        <option value="SM Report" <?php
+                        if (isset($report) && $report == 'SM Report') {
+                            echo"selected";
+                        }
+                        ?>>SM Report</option>
+                    </select></div>
                 <div class="col-xs-6">
-                <input type="submit" class="btn btn-success btn-block" value="Search"/>
+                    <input type="submit" class="btn btn-success btn-block" value="Search"/>
                 </div>
             </form>
         </div>

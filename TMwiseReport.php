@@ -30,9 +30,9 @@ if (!empty($check)) {
             <th>BIP Paramedic Meet</th>
             <th>BIP Chemist Meet</th>
             <th>Visibility At Clinics</th>
-            <th>Revolizer Rx Generated</th>
-            <th>ZVT Rx Generated</th>
-            <th>Rotahaler Rx Generated</th>
+            <th>Revolizer Rx</th>
+            <th>ZVT Rx</th>
+            <th>Rotahaler Rx</th>
         </tr>
         <?php foreach ($check as $check2) { ?>
             <tr>

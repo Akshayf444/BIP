@@ -17,7 +17,7 @@ if (isset($_GET['report'])) {
 }
 ?>
 <div class="col-lg-12">
-    <a href="SMDashboard.php" class="badge">GO Back</a>
+    <a href="View.php" class="badge">GO Back</a>
 </div>
 <div class="row">
     <div class="col-lg-12">
@@ -59,6 +59,9 @@ if (isset($_GET['report'])) {
                     <th>BIP Paramedic Meet</th>
                     <th>BIP Chemist Meet</th>
                     <th>Visibility At Clinics(Poster/Tearoff)</th>
+                    <th>Revolizer Rx</th>
+                    <th>ZVT Rx</th>
+                    <th>Rotahaler Rx</th>
                 </tr>
                 <?php foreach ($check as $check2) { ?>
                     <tr>
@@ -73,6 +76,9 @@ if (isset($_GET['report'])) {
                         <td><?php echo $check2->paramedic; ?></td>
                         <td><?php echo $check2->chemist_meet; ?></td>
                         <td><?php echo $check2->visibility; ?></td>
+                        <td><?php echo $check2->revolizer; ?></td>
+                        <td><?php echo $check2->zvt; ?></td>
+                        <td><?php echo $check2->rotahaler; ?></td>
                     </tr>
                 <?php } ?>
             </table>
