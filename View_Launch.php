@@ -18,6 +18,9 @@ if (isset($_SESSION['bdmemp'])) {
 }
 require_once './header.php';
 ?>
+<div class = "col-lg-12">
+    <a href = "View.php" class = "badge">GO Back</a>
+</div>
 <div class="col-lg-12">
     <h4>VIEW BIP DIFFERENTIAL LAUNCH DETAIL</h4>
     <table class="table table-bordered">

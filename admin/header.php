@@ -34,7 +34,7 @@
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
                 <a id="anchr_Home" ><img id="Image1" src="../Images/screen.png" style="position: relative;height:9%;width: 13%;"></a> 
 
-                <label id="lblName"  style="color:white">Welcome <?php
+                <label id="lblName"  style="color:white;margin-left: 4%">Welcome <?php
                     if (isset($_SESSION['adminname'])) {
                         echo $_SESSION['adminname'];
                     }

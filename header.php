@@ -34,7 +34,7 @@
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
                 <a id="anchr_Home" ><img id="Image1" src="Images/screen.png" style="position: relative;height:10%;width: 13%;"></a> 
 
-                <label  id="lblName"  style="color:white">Welcome <?php
+                <label  id="lblName"  style="color:white;margin-left: 4%">Welcome <?php
                     if (isset($_SESSION['bdmname'])) {
                         echo $_SESSION['bdmname'];
                     } elseif (isset($_SESSION['smname'])) {
@@ -42,7 +42,8 @@
                     } elseif (isset($_SESSION['tmname'])) {
                         echo $_SESSION['tmname'];
                     }
-                    ?></label>
+                    ?>
+                </label>
 
                 <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
             </ul>
