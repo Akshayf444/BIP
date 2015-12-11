@@ -32,7 +32,7 @@ GROUP BY bmp.`TM_Emp_Id`";
     }
 
     public static function TM_Doctor($id) {
-        $sql = "select * from tm_doctor where TM_Emp_Id=$id";
+        $sql = "select * from tm_doctor where TM_Emp_Id = $id";
         return Query::executeQuery($sql);
     }
 

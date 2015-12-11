@@ -91,14 +91,25 @@ class man_power extends Table {
         }
     }
 
-    public static function TMList($bdm_emp_id) {
-        $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile` FROM `bip_manpower` WHERE BM_Emp_Id = '$bdm_emp_id' ";
+    public static function TMList($conditions = array()) {
+        $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile` FROM `bip_manpower`  ";
+        if (!empty($conditions)) {
+            $sql .= join(" ", $conditions);
+        }
         return Query::executeQuery($sql);
     }
 
-    public static function TMDropdowm($bdm_emp_id,$smid = 0) {
+    public static function BMList($conditions = array()) {
+        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` FROM `bip_manpower`  ";
+        if (!empty($conditions)) {
+            $sql .= join(" ", $conditions);
+        }
+        return Query::executeQuery($sql);
+    }
+
+    public static function TMDropdowm($conditions, $smid = 0) {
         $output = '<option>Select TM</option>';
-        $smlist = self::TMList($bdm_emp_id);
+        $smlist = self::TMList($conditions);
         if (!empty($smlist)) {
             foreach ($smlist as $sm) {
                 if ($sm->TM_Emp_Id == $smid) {
@@ -112,11 +123,25 @@ class man_power extends Table {
         return $output;
     }
 
+    public static function BMDropdowm($conditions, $smid = 0) {
+        $output = '<option>Select BM</option>';
+        $smlist = self::BMList($conditions);
+        if (!empty($smlist)) {
+            foreach ($smlist as $sm) {
+                if ($sm->BM_Emp_Id == $smid) {
+                    $output.= "<option value = " . $sm->BM_Emp_Id . " selected >" . $sm->BM_Name . "</option>";
+                } else {
+                    $output.= "<option value = " . $sm->BM_Emp_Id . " >" . $sm->BM_Name . "</option>";
+                }
+            }
+        }
+
+        return $output;
+    }
+
     public static function BMlist2($condition) {
         $sql = "SELECT * FROM `breathfree_manpower` WHERE smswayid " . $condition;
         return Query::executeQuery($sql);
     }
-
-    
 
 }

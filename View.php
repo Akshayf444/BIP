@@ -63,7 +63,7 @@ if (isset($_SESSION['bdmemp'])) {
     </div>
 <?php } else {
     ?>
-<div class="row">
+    <div class="row">
         <div class="col-xs-3"></div>
         <div class="col-lg-6 panel panel-default">
             <div class="panel panel-body">
@@ -74,7 +74,7 @@ if (isset($_SESSION['bdmemp'])) {
                 </div>
                 <div align="center" class="row">
                     <div class="form-group">
-                        <a href="#" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
+                        <a href="SM_View_Launch.php" class="btn btn-success btn-block">VIEW BIP DIFFERENTIAL LAUNCH</a>
                     </div>
                 </div>
                 <div align="center" class="row">
@@ -85,12 +85,7 @@ if (isset($_SESSION['bdmemp'])) {
             </div>
         </div>
     </div>
-
-
-
-
-
     <?php
-    }
-    require_once './footer.php';
-    ?>
+}
+require_once './footer.php';
+?>
