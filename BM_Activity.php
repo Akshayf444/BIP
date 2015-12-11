@@ -33,23 +33,23 @@ require_once './header.php';
     <form action="#" method="post">
         <div class="form-group">
             <label>BIP Launch</label>
-            <input type="number" min="0" class="form-control" name="launch" >
+            <input type="number" min="0" class="form-control" name="launch" placeholder="No.of Dr To whom BIP is Launch" >
         </div>
         <div class="form-group">
             <label>BIP Device Check Camp</label>
-            <input type="number" min="0" class="form-control" name="device_check" >
+            <input type="number" min="0" class="form-control" name="device_check" placeholder="No.of Device Check Camp Conducted">
         </div>
         <div class="form-group">
             <label> BIP Paramedic Meet</label>
-            <input type="number" min="0" class="form-control" name="paramedic" >
+            <input type="number" min="0" class="form-control" name="paramedic" placeholder="No.of Paramedic Meet Conducted">
         </div>
         <div class="form-group">
             <label> BIP Chemist Meet</label>
-            <input type="number" min="0" class="form-control" name="chemist_meet" >
+            <input type="number" min="0" class="form-control" name="chemist_meet" placeholder="No.of Chemist Meet Conducted">
         </div>
         <div class="form-group">
             <label>Visibility At Clinics</label>
-            <input type="number" min="0" class="form-control" name="visibility" >
+            <input type="number" min="0" class="form-control" name="visibility" placeholder="No.of Clinic With Visibility">
         </div>
 
         <div class="form-group">

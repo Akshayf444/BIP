@@ -32,19 +32,23 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #7e9e49; background-repeat:no-repeat; background-size: 100% 122px;">
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">
-                <a id="anchr_Home" ><img id="Image1" src="Images/screen.png" style="position: relative;height:10%;width: 13%;"></a> 
-
-                <label  id="lblName"  style="color:white;margin-left: 4%">Welcome <?php
-                    if (isset($_SESSION['bdmname'])) {
-                        echo $_SESSION['bdmname'];
-                    } elseif (isset($_SESSION['smname'])) {
-                        echo $_SESSION['smname'];
-                    } elseif (isset($_SESSION['tmname'])) {
-                        echo $_SESSION['tmname'];
-                    }
-                    ?>
-                </label>
-
-                <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
+                <div class="col-lg-2 col-xs-2">
+                    <a id="anchr_Home" ><img id="Image1"  src="Images/screen.png" style="position: relative" width="100%" height="200%"></a> 
+                </div>
+                <div class="col-lg-8 col-xs-8">
+                    <label  id="lblName"  style="color:white;margin-left: 4%">Welcome <?php
+                        if (isset($_SESSION['bdmname'])) {
+                            echo $_SESSION['bdmname'];
+                        } elseif (isset($_SESSION['smname'])) {
+                            echo $_SESSION['smname'];
+                        } elseif (isset($_SESSION['tmname'])) {
+                            echo $_SESSION['tmname'];
+                        }
+                        ?>
+                    </label>
+                </div>
+                <div class="col-lg-2 col-xs-2">
+                    <a href="logout.php"> <i class="fa fa-power-off fa-2x pull-right" style="color:red;position: relative;right: 17px;margin-top: 6%;"></i></a>
+                </div>
             </ul>
         </nav>

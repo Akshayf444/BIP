@@ -12,7 +12,7 @@ if (isset($_SESSION['bdmemp'])) {
         <div class="panel panel-body">
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="View_Doctor.php" class="btn btn-success btn-block ">VIEW BIP SELECTION OF DR(COMPETITORS)</a>
+                    <a href="View_Doctor.php" class="btn btn-success btn-block ">VIEW BIP DR (COMPETITORS)</a>
                 </div>
             </div>
             <div align="center" class="row">
@@ -41,7 +41,7 @@ if (isset($_SESSION['bdmemp'])) {
         <div class="panel panel-body">
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="View_Doctor.php" class="btn btn-success btn-block ">VIEW BIP SELECTION OF DR(COMPETITORS)</a>
+                    <a href="View_Doctor.php" class="btn btn-success btn-block ">VIEW BIP DR (COMPETITORS)</a>
                 </div>
             </div>
             <div align="center" class="row">

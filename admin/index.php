@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 
     if ($found_admin) {
         $_SESSION['name'] = $found_admin->name;
+        $_SESSION['adminname'] = $found_admin->username;
         redirect_to("adminDashboard.php");
     } else {
         $message = "Incorrect Username/Password.";

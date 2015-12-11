@@ -13,13 +13,13 @@ if (isset($_SESSION['bdmemp'])) {
 
     <div class = "row">
         <div class = "col-lg-12 ">
-            <h4>VIEW BIP SELECTION OF DR(COMPETITORS)</h4>
+            <h4 style="text-align: center">VIEW BIP DR (COMPETITORS)</h4>
             <form action = "View.php" method = "GET">
                 <table class = "table table-bordered table-stripped">
                     <tr>
                         <th>Doctor Name</th>
-                        <th>Competiton For Brand / Device Prescribe</th>
-                        <th>Competiton For Support(Rs)</th>
+                        <th>Competitor Brand /Device Prescribed</th>
+                        <th>Competitor Support (Rs)</th>
                     </tr>
                     <?php
                     if (!empty($view)) {
@@ -30,8 +30,10 @@ if (isset($_SESSION['bdmemp'])) {
                                 <td><?php echo $v->brand; ?></td>
                                 <td><?php echo $v->support; ?></td>
                             </tr>
-                        <?php }
-                    } ?>
+                        <?php
+                        }
+                    }
+                    ?>
                 </table>
             </form>
         </div>
@@ -47,13 +49,13 @@ if (isset($_SESSION['bdmemp'])) {
 
     <div class = "row">
         <div class = "col-lg-12 ">
-            <h4>VIEW BIP SELECTION OF DR(COMPETITORS)</h4>
+            <h4 style="text-align: center">VIEW BIP DR (COMPETITORS)</h4>
             <form action = "View.php" method = "GET">
                 <table class = "table table-bordered table-stripped">
                     <tr>
                         <th>Doctor Name</th>
-                        <th>Competiton For Brand / Device Prescribe</th>
-                        <th>Competiton For Support(Rs)</th>
+                        <th>Competitor Brand /Device Prescribed</th>
+                        <th>Competitor Support (Rs)</th>
                     </tr>
                     <?php
                     if (!empty($view)) {
@@ -64,7 +66,8 @@ if (isset($_SESSION['bdmemp'])) {
                                 <td><?php echo $v->brand; ?></td>
                                 <td><?php echo $v->support; ?></td>
                             </tr>
-                        <?php }
+                            <?php
+                        }
                     }
                     ?>
                 </table>

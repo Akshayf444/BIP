@@ -299,6 +299,134 @@ require_once 'header.php';
                         <br />
                         <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
                     </div>
+                    <div>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="dv_top"  style="position: absolute; top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp(BM)</div>
+                        <?php
+                        $condition = array('GROUP BY bmp.BM_Emp_Id ORDER BY device_check DESC LIMIT 1');
+                        $topper = Activity::BMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+                        <div id="dv_tm1name"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 70px; width: 100%; height: 20px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->BM_Name) ? $topper->BM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->device_check) ? $topper->device_check : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.BM_Emp_Id ORDER BY paramedic DESC LIMIT 1');
+                        $topper = Activity::BMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div1"  style="position: absolute; top: 10px;width: 100%;background-color: #7e9e49; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Paramedic Meet(BM)</div>
+                        <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->BM_Name) ? $topper->BM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->paramedic) ? $topper->paramedic : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.BM_Emp_Id ORDER BY chemist_meet DESC LIMIT 1');
+                        $topper = Activity::BMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%;background-color: #7e9e49; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Chemist Meet(BM)</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->BM_Name) ? $topper->BM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->chemist_meet) ? $topper->chemist_meet : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.BM_Emp_Id ORDER BY visibility DESC LIMIT 1');
+                        $topper = Activity::BMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; background-color: #7e9e49;height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Visibility At Clinics(BM)</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->BM_Name) ? $topper->BM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->visibility) ? $topper->visibility : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Region) ? $topper->Region : 'NA'; ?></div>
+                    </div>
+                    <div>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="dv_top"  style="position: absolute; top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp(TM)</div>
+                        <?php
+                        $condition = array('GROUP BY bmp.TM_Emp_Id ORDER BY device_check DESC LIMIT 1');
+                        $topper = Activity::TMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+                        <div id="dv_tm1name"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 70px; width: 100%; height: 20px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->TM_Name) ? $topper->TM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm1Region"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 120px; width: 100%;height: 10px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->device_check) ? $topper->device_check : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm1Rx"  u="caption" t="FLTTR|R" style="position: absolute;background-color: #7e9e49; left:0px; top: 170px;width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.TM_Emp_Id ORDER BY paramedic DESC LIMIT 1');
+                        $topper = Activity::SMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div1"  style="position: absolute; top: 10px;width: 100%;background-color: #7e9e49; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Paramedic Meet(TM)</div>
+                        <div id="dv_tm2name"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->TM_Name) ? $topper->TM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm2Region"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49; left:0px;top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->paramedic) ? $topper->paramedic : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm2Rx"  u="caption" t="ZMF|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600;color:#fff;  line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.TM_Emp_Id ORDER BY chemist_meet DESC LIMIT 1');
+                        $topper = Activity::SMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%;background-color: #7e9e49; height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of BIP Chemist Meet(TM)</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->TM_Name) ? $topper->TM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->chemist_meet) ? $topper->chemist_meet : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
+                    </div>
+                    <div>
+                        <?php
+                        $condition = array('GROUP BY bmp.TM_Emp_Id ORDER BY visibility DESC LIMIT 1');
+                        $topper = Activity::SMActivity($condition);
+                        if (!empty($topper)) {
+                            $topper = array_shift($topper);
+                        }
+                        ?>
+<!--                        <img u="image" src="../Images/darkback.jpg" />-->
+                        <div id="Div2"  style="position: absolute;  top: 10px;width: 100%; background-color: #7e9e49;height: 20px; font-size: 23px; color: #fff; line-height: 30px;">Most No. Of Visibility At Clinics(TM)</div>
+                        <div id="dv_tm3name"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;  top: 70px; width: 100%; height: 40px; font-size: 43px; color: #fff; line-height: 40px;"><?php echo isset($topper->TM_Name) ? $topper->TM_Name : 'NA'; ?></div>
+                        <br />
+                        <div id="dv_tm3Region"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px; top: 120px; width: 100%; height: 40px; font-size: 36px; color: #fff; line-height: 40px;"><?php echo isset($topper->visibility) ? $topper->visibility : '-'; ?></div>
+                        <br />
+                        <div id="dv_tm3Rx"  u="caption" t="RTT|10" style="position: absolute;background-color: #7e9e49;left:0px;top: 170px; width: 100%; height: 20px; font-size: 36px;font-weight:600; color:#fff; line-height: 40px;"><?php echo isset($topper->Territory) ? $topper->Territory : 'NA'; ?></div>
+                    </div>
                 </div>
                 <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
                 <!-- Trigger -->

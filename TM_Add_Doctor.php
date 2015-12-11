@@ -32,14 +32,14 @@ if (isset($_GET['doctor_name'])) {
 </div>
 <div class="row">
     <div class="col-lg-12 ">
-        <h4>ADD BIP SELECTION OF DR(COMPETITORS)</h4>
+        <h4>ADD BIP DR (COMPETITORS)</h4>
         <form action="TM_Add_Doctor.php" method="GET">
             <table class="table table-bordered table-stripped">
                 <tr>
-                    <th>Sr.NO</th>
+                    <th>Sr. No.</th>
                     <th>Doctor Name</th>
-                    <th>Competiton For Brand / Device Prescribe</th>
-                    <th>Competiton For Support(Rs)</th>
+                    <th>Competitor Brand /Device Prescribed</th>
+                    <th>Competitor Support (Rs)</th>
                 </tr>
                 <tr>
                     <td>1</td>
