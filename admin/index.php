@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) { // Form has been submitted.
     //$found_sm = sm::authenticate($username, $password);
 
     if ($found_admin) {
-        $_SESSION['adminname'] = $found_admin->username;
+        $_SESSION['name'] = $found_admin->name;
         redirect_to("adminDashboard.php");
     } else {
         $message = "Incorrect Username/Password.";
