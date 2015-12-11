@@ -15,7 +15,7 @@ require_once './header.php';
 ?>
 <div class="col-lg-12">
     <a href="View.php" class="badge">GO Back</a>
-    <a href="TMwiseReport.php?type=bdm" class="btn btn-success badge">TM REPORT</a>
+    <a href="TMwiseReport.php?type=bm" class="btn btn-success badge">TM REPORT</a>
 </div>
 <div class="col-lg-12">
     <h4>VIEW BIP ACTIVITY</h4>
@@ -43,7 +43,5 @@ require_once './header.php';
         ?>
     </table>
 </div>
-
-
 <?php
 require_once './footer.php';

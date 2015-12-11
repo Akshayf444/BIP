@@ -4,17 +4,32 @@ require_once("./includes/initialize.php");
 if (isset($_SESSION['bdmemp'])) {
     $BM_Emp_id = $_SESSION['bdmemp'];
     $Activities = Launch::BMActivity($BM_Emp_id);
+    $TMlist = man_power::TMDropdowm($BM_Emp_id);
 
+    if (isset($_POST['tmreport'])) {
+        $TM_Emp_id = $_POST['tmreport'];
+        $TMlist = man_power::TMDropdowm($BM_Emp_id, $TM_Emp_id);
+        $Activities = Launch::TMActivity($TM_Emp_id);
+    }
 } elseif (isset($_SESSION['tmemp'])) {
     $TM_Emp_id = $_SESSION['tmemp'];
-    $Activities = Launch::TMActivity($TM_Emp_id);
 
+    $Activities = Launch::TMActivity($TM_Emp_id);
 }
 require_once './header.php';
 ?>
-<div class = "col-lg-12">
+
+<div class="col-xs-3">
     <a href = "View.php" class = "badge">GO Back</a>
 </div>
+<div class="col-xs-9">
+    <?php
+    if (!empty($TMlist) && isset($TMlist)) {
+        echo '<form action="#" method="post"><select onchange="this.form.submit()"  name="tmreport">' . $TMlist . '</select></form>';
+    }
+    ?>
+</div><br/>
+
 <style>
     .dropdown-menu {
         position: relative;

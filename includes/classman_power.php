@@ -91,20 +91,20 @@ class man_power extends Table {
         }
     }
 
-    public static function SMList() {
-        $sql = "SELECT DISTINCT(`SM_Emp_Id`) As SM_Emp_Id,`SM_Name` , `SM_Mobile` FROM `breathfree_manpower`";
+    public static function TMList($bdm_emp_id) {
+        $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile` FROM `bip_manpower` WHERE BM_Emp_Id = '$bdm_emp_id' ";
         return Query::executeQuery($sql);
     }
 
-    public static function SMDropdowm($smid = 0) {
-        $output = '<option>Select SM</option>';
-        $smlist = self::SMList();
+    public static function TMDropdowm($bdm_emp_id,$smid = 0) {
+        $output = '<option>Select TM</option>';
+        $smlist = self::TMList($bdm_emp_id);
         if (!empty($smlist)) {
             foreach ($smlist as $sm) {
-                if ($sm->SM_Emp_Id == $smid) {
-                    $output.= "<option value = " . $sm->SM_Emp_Id . " selected >" . $sm->SM_Name . "</option>";
+                if ($sm->TM_Emp_Id == $smid) {
+                    $output.= "<option value = " . $sm->TM_Emp_Id . " selected >" . $sm->TM_Name . "</option>";
                 } else {
-                    $output.= "<option value = " . $sm->SM_Emp_Id . " >" . $sm->SM_Name . "</option>";
+                    $output.= "<option value = " . $sm->TM_Emp_Id . " >" . $sm->TM_Name . "</option>";
                 }
             }
         }
