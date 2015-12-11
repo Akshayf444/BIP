@@ -9,6 +9,7 @@ if (isset($_SESSION['bdmemp'])) {
     ?>
     <div class = "col-lg-12">
         <a href = "View.php" class = "badge">GO Back</a>
+        <a href = "Tm_doctor_view.php" class = "badge">TM Report</a>
     </div>
 
     <div class = "row">
