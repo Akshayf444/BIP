@@ -31,5 +31,10 @@ require_once './header.php';
         </div>
     </div>
 </div>
-
+<div class="row">
+   <marquee style="    color: red;" behavior="scroll" direction="left">* Currently, only “Add BIP Dr” & “Add BIP Differential Launch” are active. “Add Activity Details” tab will be active from 2<sup>nd</sup> Jan 2016</marquee>
+</div>
+<div class="row">
+   <marquee style="    color: red;" behavior="scroll" direction="left">* Earlier data filled in “Add Activity Details” has been reset to zero. It will be active from 2<sup>nd</sup> Jan 2016</marquee>
+</div>
 <?php require_once './footer.php'; ?>
