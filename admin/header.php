@@ -24,11 +24,11 @@
         <!-- Morris Charts CSS -->
         <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet" />
 
-        <!-- Custom Fonts -->
+  <!-- Custom Fonts -->
         <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /></asp:ContentPlaceHolder>
+
 </head>
 <body>
-
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #7e9e49; background-repeat:no-repeat; background-size: 100% 122px;">
             <ul class="nav navbar-top-links navbar-right" style=" float:left !important">

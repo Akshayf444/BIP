@@ -21,14 +21,14 @@ if (isset($_SESSION['smemp'])) {
 <div class="col-xs-3">
     <a href = "View.php" class = "badge">GO Back</a>
 </div>
-<div class="col-xs-4">
+<div class="col-xs-5">
     <?php
     if (!empty($TMlist) && isset($TMlist)) {
         echo '<form action="#" method="post"><select onchange="this.form.submit()"  name="tmreport">' . $TMlist . '</select></form>';
     }
     ?>
-</div
-<div class="col-xs-4">
+</div><br/>
+<div class="col-xs-offset-3 col-xs-5">
     <?php
     if (!empty($BMlist) && isset($BMlist)) {
         echo '<form action="#" method="post"><select onchange="this.form.submit()"  name="bmreport">' . $BMlist . '</select></form>';
@@ -46,22 +46,31 @@ if (isset($_SESSION['smemp'])) {
         </tr>
         <?php
         if (!empty($Activities)) {
+            $count = 1;
             foreach ($Activities as $Activity) {
                 echo '<tr>'
-                . '<td>' . $Activity->launch_id . '</td>'
+                . '<td>' . $count++ . '</td>'
                 . '<td>' . $Activity->docname . '</td>'
-                . '<td><button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                View
-                            </button>
-                            <ul class="dropdown-menu" role="menu" style="padding:7px">
-                                ' . $Activity->act_detail . '
-                            </ul>
-                            </td>
+                . '<td><button type="button" class="btn btn-link btn-primary" data-container="body" data-toggle="popover" data-content="' . $Activity->act_detail . '">View</button></td>
                             </tr>';
             }
         }
         ?>
     </table>
 </div>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+        $('body').on('click', function (e) {
+            $('[data-toggle="popover"]').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
+        });
+    });
+</script>
 <?php require_once './footer.php'; ?>
 

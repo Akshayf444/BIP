@@ -24,20 +24,20 @@ if (isset($_GET['report'])) {
         <div class="col-sm-12">
             <form action="SM_View.php" method="GET">
                 <div class="col-xs-6">
-                <select class="form-control" name="report">
-                    <option value="TM Report" <?php
-                    if (isset($report) && $report == 'TM Report') {
-                        echo"selected";
-                    }
-                    ?>>TM Report</option>
-                    <option value="BM Report" <?php
-                    if (isset($report) && $report == 'BM Report') {
-                        echo"selected";
-                    }
-                    ?>>BM Report</option>
-                </select></div>
+                    <select class="form-control" name="report">
+                        <option value="TM Report" <?php
+                        if (isset($report) && $report == 'TM Report') {
+                            echo"selected";
+                        }
+                        ?>>TM Report</option>
+                        <option value="BM Report" <?php
+                        if (isset($report) && $report == 'BM Report') {
+                            echo"selected";
+                        }
+                        ?>>BM Report</option>
+                    </select></div>
                 <div class="col-xs-6">
-                <input type="submit" class="btn btn-success btn-block" value="Search"/>
+                    <input type="submit" class="btn btn-success btn-block" value="Search"/>
                 </div>
             </form>
         </div>
@@ -55,6 +55,7 @@ if (isset($_GET['report'])) {
                             echo "TM Name";
                         }
                         ?></th>
+                    <th>BIP Launch</th>
                     <th>BIP Device Check Camp</th>
                     <th>BIP Paramedic Meet</th>
                     <th>BIP Chemist Meet</th>
@@ -72,6 +73,7 @@ if (isset($_GET['report'])) {
                                 echo $check2->TM_Name;
                             }
                             ?></td>
+                        <td><?php echo $check2->launch; ?></td>
                         <td><?php echo $check2->device_check; ?></td>
                         <td><?php echo $check2->paramedic; ?></td>
                         <td><?php echo $check2->chemist_meet; ?></td>

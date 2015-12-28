@@ -13,7 +13,7 @@ if (isset($_SESSION['bdmemp'])) {
 
     <div class = "row">
         <div class = "col-lg-12 ">
-<!--            <h4 style="text-align: center">VIEW BIP DR (COMPETITORS)</h4>-->
+            <!--            <h4 style="text-align: center">VIEW BIP DR (COMPETITORS)</h4>-->
             <form action = "View.php" method = "GET">
                 <table class = "table table-bordered table-stripped">
                     <tr>
@@ -25,10 +25,10 @@ if (isset($_SESSION['bdmemp'])) {
                         foreach ($view as $v) {
                             ?>
                             <tr>
-                                <td><a href="TM_all_doctor.php?id=<?php echo $v->TM_Emp_Id?>"><?php echo $v->TM_Name; ?></a></td>
+                                <td><a href="TM_all_doctor.php?id=<?php echo $v->TM_Emp_Id ?>"><?php echo $v->TM_Name; ?></a></td>
                                 <td><?php echo $v->doctor_count; ?></td>
                             </tr>
-                        <?php
+                            <?php
                         }
                     }
                     ?>
@@ -36,6 +36,6 @@ if (isset($_SESSION['bdmemp'])) {
             </form>
         </div>
     </div>
-   
+
 <?php } require_once './footer.php'; ?>
 

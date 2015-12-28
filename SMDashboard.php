@@ -7,6 +7,7 @@ if (!isset($_SESSION['smemp'])) {
 
 require_once("./includes/initialize.php");
 $SM_Emp_id = $_SESSION['smemp'];
+
 require_once './header.php';
 ?>
 <style>
@@ -150,7 +151,7 @@ require_once './header.php';
     <br />
     <?php
     $conditions = array('WHERE SM_EMP_ID = ' . $SM_Emp_id);
-    $dashboard = Activity::SMActivity(array('WHERE t_union.SM_EMP_ID = ' . $SM_Emp_id));
+    $dashboard = Activity::SMActivity(array('WHERE t_union.SM_EMP_ID = ' . $SM_Emp_id), array('WHERE bmp.SM_EMP_ID = ' . $SM_Emp_id));
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
     }
@@ -210,7 +211,7 @@ require_once './header.php';
                 </div>
             </div>
         </div>
-         <br/>
+        <br/>
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">
@@ -241,7 +242,7 @@ require_once './header.php';
                         <div id="dv_top"  style="position: absolute; top: 10px;background-color: #7e9e49;width: 100%; height: 20px; font-size: 25px; font-weight:500; color: #fff; line-height: 30px;">Most No. Of BIP Device Check Camp</div>
                         <?php
                         $condition = array('GROUP BY t_union.SM_Emp_Id ORDER BY device_check DESC LIMIT 1');
-                        $topper = Activity::SMActivity($condition);
+                        $topper = Activity::SMActivity($condition, array('GROUP BY bmp.SM_Emp_Id'));
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -255,7 +256,7 @@ require_once './header.php';
                     <div>
                         <?php
                         $condition = array('GROUP BY t_union.SM_Emp_Id ORDER BY paramedic DESC LIMIT 1');
-                        $topper = Activity::SMActivity($condition);
+                        $topper = Activity::SMActivity($condition, array('GROUP BY bmp.SM_Emp_Id'));
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -271,7 +272,7 @@ require_once './header.php';
                     <div>
                         <?php
                         $condition = array('GROUP BY t_union.SM_Emp_Id ORDER BY chemist_meet DESC LIMIT 1');
-                        $topper = Activity::SMActivity($condition);
+                        $topper = Activity::SMActivity($condition, array('GROUP BY bmp.SM_Emp_Id'));
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }
@@ -287,7 +288,7 @@ require_once './header.php';
                     <div>
                         <?php
                         $condition = array('GROUP BY t_union.SM_Emp_Id ORDER BY visibility DESC LIMIT 1');
-                        $topper = Activity::SMActivity($condition);
+                        $topper = Activity::SMActivity($condition, array('GROUP BY bmp.SM_Emp_Id'));
                         if (!empty($topper)) {
                             $topper = array_shift($topper);
                         }

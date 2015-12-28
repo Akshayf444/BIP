@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
         'smswayid' => $_SESSION['bdm'],
     );
     $addActivity->create($field_array);
+    echo '<script>alert("Data Added Successfully.");</script>';
     redirect_to('BM_Activity.php');
 }
 require_once './header.php';
@@ -33,7 +34,7 @@ require_once './header.php';
     <form action="#" method="post">
         <div class="form-group">
             <label>BIP Launch</label>
-            <input type="number" min="0" class="form-control" name="launch" placeholder="No.of Dr To whom BIP is Launch" >
+            <input type="number" min="0" class="form-control" name="launch" placeholder="No.of Dr To Whom BIP Is Launched" >
         </div>
         <div class="form-group">
             <label>BIP Device Check Camp</label>

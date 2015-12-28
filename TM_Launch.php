@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
         'created' => date('Y-m-d H:i:s'),
     );
     if ($addLaunch->create($field_array)) {
+        echo '<script>alert("Data Added Successfully.");</script>';
         redirect_to('TM_Launch.php');
     }
 }

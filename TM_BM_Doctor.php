@@ -21,14 +21,14 @@ if (isset($_SESSION['smemp'])) {
 <div class="col-xs-3">
     <a href = "View.php" class = "badge">GO Back</a>
 </div>
-<div class="col-xs-4">
+<div class="col-xs-5">
     <?php
     if (!empty($TMlist) && isset($TMlist)) {
         echo '<form action="#" method="post"><select onchange="this.form.submit()"  name="tmreport">' . $TMlist . '</select></form>';
     }
     ?>
-</div
-<div class="col-xs-4">
+</div><br/>
+<div class="col-xs-offset-3 col-xs-5">
     <?php
     if (!empty($BMlist) && isset($BMlist)) {
         echo '<form action="#" method="post"><select onchange="this.form.submit()"  name="bmreport">' . $BMlist . '</select></form>';

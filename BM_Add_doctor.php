@@ -24,7 +24,8 @@ if (isset($_GET['doctor_name'])) {
             $add_doctor->create($field_array);
         }
     }
-    header("location:BM_Add_doctor.php");
+    echo '<script>alert("Data Added Successfully.");</script>';
+    echo '<script>window.location = "BM_Add_Doctor.php"; </script>';
 }
 ?>
 <div class="col-lg-12">
