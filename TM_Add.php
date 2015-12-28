@@ -19,7 +19,8 @@ require_once './header.php';
             </div>
             <div align="center" class="row">
                 <div class="form-group">
-                    <a href="TM_Activity.php" class="btn btn-success btn-block">ADD ACTIVITY DETAILS</a>
+                    <a href="#" class="btn btn-success btn-block">ADD ACTIVITY DETAILS</a>
+<!--                    <a href="TM_Activity.php" class="btn btn-success btn-block">ADD ACTIVITY DETAILS</a>-->
                 </div>
             </div>
             <div align="center" class="row">
