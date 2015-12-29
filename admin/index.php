@@ -9,13 +9,21 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 
     // Check database to see if username/password exist.
     $found_admin = man_power::adminLogin($username, $password);
+    $found_admin2 = man_power::adminLogin2($username, $password);
     //$found_sm = sm::authenticate($username, $password);
-
-    if ($found_admin) {
+   
+    if (!empty($found_admin)) {
         $_SESSION['name'] = $found_admin->name;
         $_SESSION['adminname'] = $found_admin->username;
         redirect_to("adminDashboard.php");
-    } else {
+    } 
+    elseif(!empty($found_admin2)){
+        
+        $_SESSION['SBH_Name'] = $found_admin->SBH_Name;
+        $_SESSION['state'] = $found_admin->state;
+        redirect_to("SBHDashboard.php");
+    }
+    else {
         $message = "Incorrect Username/Password.";
         flashMessage($message, 'error');
     }

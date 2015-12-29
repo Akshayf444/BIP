@@ -90,6 +90,20 @@ class man_power extends Table {
             return !empty($result_array) ? array_shift($result_array) : false;
         }
     }
+    public static function adminLogin2($id = "", $password = "") {
+        global $database;
+        $id = $database->escape_value($id);
+        $password = $database->escape_value($password);
+        if ($id != '' && $password != '') {
+            $sql = "SELECT * FROM bip_manpower ";
+            $sql .= "WHERE SBH_Emp_Id = '{$id}' ";
+            $sql .= " AND  SBH_Password = '{$password}' ";
+            $sql .= " LIMIT 1";
+            //echo $sql;
+            $result_array = Query::executeQuery($sql);
+            return !empty($result_array) ? array_shift($result_array) : false;
+        }
+    }
 
     public static function TMList($conditions = array()) {
         $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile` FROM `bip_manpower`  ";
