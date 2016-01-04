@@ -24,7 +24,7 @@
         <!-- Morris Charts CSS -->
         <link href="http://instacom.in/Cutisera/bower_components/morrisjs/morris.css" rel="stylesheet" />
 
-  <!-- Custom Fonts -->
+        <!-- Custom Fonts -->
         <link href="http://instacom.in/Cutisera/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" /></asp:ContentPlaceHolder>
 
 </head>
@@ -36,6 +36,8 @@
                 <label id="lblName"  style="color:white;margin-left: 4%">Welcome <?php
                     if (isset($_SESSION['name'])) {
                         echo $_SESSION['name'];
+                    } elseif (isset($_SESSION['SBH_Name'])) {
+                        echo $_SESSION['SBH_Name'];
                     }
                     ?></label>
 

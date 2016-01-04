@@ -1,9 +1,5 @@
 <?php
 session_start();
-//if (!isset($_SESSION['SBH_Name'])) {
-//    header("Location: index.php");
-//    exit();
-//}
 
 require_once("../includes/initialize.php");
 require_once 'header.php';
@@ -137,19 +133,28 @@ require_once 'header.php';
         //responsive code end
     });
 </script>
-<div id="page-wrapper" style="background-image: url('images/screen2.jpg'); margin: 0px 0 0 0px; background-repeat:repeat-y; background-size:100%">
+<div id="page-wrapper" style="background-image: url('../images/screen2.jpg'); margin: 0px 0 0 0px; background-repeat:repeat-y; background-size:100%">
 
     <div class="row">
-        <div class="col-lg-12" style="padding-top:20px">
-            <a href="Activity_list.php" class="btn btn-info pull-right" >View</a>
+        <br/>
+        <div class="col-lg-12" >
+            <input type="button" class="btn btn-info" onclick="window.location = 'view.php'" value="View" >
         </div>
-        <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
     <br />
     <?php
-    //$conditions = array('WHERE SM_EMP_ID = ' . $SM_Emp_id);
-    $dashboard = Activity::SMActivity();
+    $SBH_Emp_Id = $_SESSION['SBH_Emp_Id'];
+    $SMList = man_power::SMList(array('WHERE SBH_Emp_Id = ' . $SBH_Emp_Id));
+    $empid = array();
+    foreach ($SMList as $value) {
+        array_push($empid, $value->SM_Emp_Id);
+    }
+    $empid = array_filter(array_map('trim', $empid));
+    $string = join(" , ", $empid);
+
+    $conditions = array('WHERE SM_EMP_ID IN(' . $string . ')');
+    $dashboard = Activity::SMActivity(array('GROUP BY t_union.SM_Emp_Id'), $conditions);
     if (!empty($dashboard)) {
         $dashboard = array_shift($dashboard);
     }
@@ -209,7 +214,7 @@ require_once 'header.php';
                 </div>
             </div>
         </div>
-         <br/>
+        <br/>
         <div class="col-lg-6 col-md-6">
             <div style="background-color:#5BC6DE;border-radius:4px;border:1px solid transparent">
                 <div class="panel-heading">

@@ -90,6 +90,7 @@ class man_power extends Table {
             return !empty($result_array) ? array_shift($result_array) : false;
         }
     }
+
     public static function adminLogin2($id = "", $password = "") {
         global $database;
         $id = $database->escape_value($id);
@@ -106,15 +107,24 @@ class man_power extends Table {
     }
 
     public static function TMList($conditions = array()) {
-        $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile` FROM `bip_manpower`  ";
+        $sql = "SELECT DISTINCT(`TM_Emp_Id`) As TM_Emp_Id,`TM_Name` , `TM_Mobile`,Zone , Region FROM `bip_manpower`  ";
+        if (!empty($conditions)) {
+            $sql .= join(" ", $conditions);
+        }
+    
+        return Query::executeQuery($sql);
+    }
+
+    public static function BMList($conditions = array()) {
+        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` ,Zone , Region FROM `bip_manpower`  ";
         if (!empty($conditions)) {
             $sql .= join(" ", $conditions);
         }
         return Query::executeQuery($sql);
     }
 
-    public static function BMList($conditions = array()) {
-        $sql = "SELECT DISTINCT(`BM_Emp_Id`) As BM_Emp_Id,`BM_Name` , `BM_Mobile` FROM `bip_manpower`  ";
+    public static function SMList($conditions = array()) {
+        $sql = "SELECT DISTINCT(`SM_Emp_Id`) As SM_Emp_Id,`SM_Name` , `SM_Mobile` FROM `bip_manpower`  ";
         if (!empty($conditions)) {
             $sql .= join(" ", $conditions);
         }
@@ -146,6 +156,22 @@ class man_power extends Table {
                     $output.= "<option value = " . $sm->BM_Emp_Id . " selected >" . $sm->BM_Name . "</option>";
                 } else {
                     $output.= "<option value = " . $sm->BM_Emp_Id . " >" . $sm->BM_Name . "</option>";
+                }
+            }
+        }
+
+        return $output;
+    }
+
+    public static function SMDropdown($conditions, $smid = 0) {
+        $output = '<option>Select SM</option>';
+        $smlist = self::SMList($conditions);
+        if (!empty($smlist)) {
+            foreach ($smlist as $sm) {
+                if ($sm->SM_Emp_Id == $smid) {
+                    $output.= "<option value = " . $sm->SM_Emp_Id . " selected >" . $sm->SM_Name . "</option>";
+                } else {
+                    $output.= "<option value = " . $sm->SM_Emp_Id . " >" . $sm->SM_Name . "</option>";
                 }
             }
         }

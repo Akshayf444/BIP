@@ -32,8 +32,9 @@ class doctor extends Table {
     }
 
     public static function TM_Doctor($id) {
-        $sql = "select * from tm_doctor where TM_Emp_Id = $id";
-        return Query::executeQuery($sql);
+        $sql = "select * from tm_doctor where TM_Emp_Id = {$id} ";
+       // echo $sql .'<br>';
+       return Query::executeQuery($sql);
     }
 
 }
